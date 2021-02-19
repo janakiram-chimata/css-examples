@@ -1,0 +1,166 @@
+.center {
+    margin: 0 auto;
+    padding: 0 1em;
+}
+@media screen and (min-width: 52em) {
+    .center{
+        max-width: 52em;
+    }
+}
+
+body,button
+{
+	color: #404040;
+	font-family: 'Helvetica', Arial, sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+/* header content style */
+.head {
+    background: hsl(0, 0%, 90%);
+}
+
+.site-title {
+    margin: 0 0 1em;
+    padding: 1em 0;
+    font-size: 2em;
+    font-weight: 300;
+    text-align: center;
+    color: black;
+}
+
+@media screen and (min-width: 44.44em) {
+    .site-title {
+        font-size: 2em;
+    }
+}
+    
+@media screen and (min-width: 50em) {
+    .site-title {
+        font-size: 2.5em;
+    }
+}
+
+/* menu section */
+.menu{
+	padding-bottom: .2em;
+	margin-bottom: 2em;
+	border-bottom: 1px solid hsl(0, 0%, );
+}
+
+.menu ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	background: hsl(0, 0%, 15%);
+}
+
+.menu li a {
+	display: block;
+	text-decoration: none;
+	color: white;
+	padding: .6em 1em;
+}
+
+.menu li a:hover {
+	background: hsl(0, 0%, 25%);
+}
+
+/* style for menu and toggles to appear as flex */
+@media screen and (max-width: 30em){
+	.general-menu ul ul li a {
+		padding-left: 2em;
+	}
+
+	.dropdown-toggle {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 30em){
+	.general-menu ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+	}	
+
+	.general-menu li {
+        flex: 1 0 auto;
+		position: relative;
+	}
+
+	li.has-children > a {
+		padding-right: 0;
+	}
+
+	.general-menu ul ul {
+		display: none;
+		position: absolute;
+		z-index:100;
+	}
+
+	.general-menu ul ul li {
+        flex: 1 1 auto;
+	}
+
+	.general-menu ul .toggled-on {
+		display: flex;
+	}
+
+	.dropdown-toggle {
+		margin: 0;
+		padding: 0 .5em;
+		border: 0;
+		font-family: 'FontAwesome';
+		content: "";
+		background-color: transparent;
+	}
+
+	.dropdown-toggle:after {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 42px;
+		color: white;
+		content: "\f107";
+		line-height: 1em;	
+	}
+
+	.dropdown-toggle:hover,
+	.dropdown-toggle:focus {
+		background: hsl(0, 0%, 25%);
+	}
+
+	.dropdown-toggle.toggle-on:after {
+		content: "\f106";
+	}
+}
+
+/* navigation menu */
+.navigation-menu{
+    display: flex;
+    background: hsl(0, 0%, 15%);
+    flex-wrap: wrap;
+    justify-content:space-between;
+}
+
+
+/* Styles for social media menu */
+.social-menu li a:before {
+    font-family: 'Fontawesome';
+     content: '\f08e'; 
+}
+
+.social-menu li a[href*="twitter.com"]::before { content: '\f099'; }
+.social-menu li a[href*="facebook.com"]::before { content: '\f09a'; }
+.social-menu li a[href*="linkedin.com"]::before { content: '\f0e1'; }
+.social-menu li a[href*="youtube.com"]::before { content: '\f167'; }
+.social-menu li a[href*="instagram.com"]::before { content: '\f16d'; }
+
+/* social menu to appear as flexbox */
+.social-menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}

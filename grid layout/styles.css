@@ -1,0 +1,171 @@
+body {
+	margin: 0;
+	font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+h1,h2,h3 {
+	text-align: center;
+	margin: 0;
+	padding: 1em 0;
+}
+
+p {
+	margin: 0;
+	padding: 1em 0;
+}
+
+img {
+	display: block;
+	border: 0;
+	width: 100%;
+	height: auto;
+}
+
+/* top header section */
+.logo,
+.site-title {
+	text-align: center;
+}
+
+.logo {
+	font-size: 8em;
+}
+
+.site-title {
+	margin-top: -1em;
+	margin-bottom: 3em;
+}
+
+.intro {
+	background: #FFF6E5;
+	padding-bottom: 2em;
+}
+
+.intro-content {
+	padding: 1.5em;
+}
+
+@media screen and (min-width: 600px) {
+	.intro-text {
+		columns: 2;
+		column-gap: 2em;
+	}
+
+	.intro-text p {
+		padding-top: 0;
+	}
+}
+
+
+.thumbnails {
+	padding: 2em 1em 1em;
+	background: #3E454C;
+}
+
+.thumbnails ul {
+	margin: 0;
+	padding: 0;
+}
+
+.thumbnails li {
+	margin-bottom: 1em;
+	background: white;
+	list-style-type: none;
+}
+
+.thumbnail {
+	padding: 1.5em;
+}
+
+.more {
+	padding: 2em;
+}
+
+
+.twin {
+	padding: 2em;
+	background: #2185C5;
+	color: white;
+}
+
+.twin:last-of-type {
+	background: #FF7F66;
+}
+
+
+/* footer section */
+.footer {
+	padding: 2em;
+	background: hsl(0, 0%, 10%);
+	color: white;
+	text-align: center;
+}
+
+.footer a {
+	color: white;
+}
+
+.footer a:hover,
+.footer a:focus {
+	border-bottom: 1px solid white;
+}
+
+
+/*flex to create a three-thumbnail layout*/
+@media screen and (min-width: 700px) {
+	@supports (display: flex) {
+		.thumbnails ul {
+			display: flex;
+			justify-content: space-around;
+		}
+
+		.thumbnails li {
+			width: 31%;
+		}
+
+	}
+}
+
+.site {
+	max-width: 50em;
+	margin: 0 auto;
+}
+
+/*CSS Grid layout */
+@supports (grid-area: auto) {
+
+	@media screen and (min-width: 600px) {
+
+		.site 
+		{
+			max-width: none; 
+		}
+
+		.main-area > *,
+		.footer {
+			display: grid;
+			grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+		}
+
+		.intro-content,
+		.more-content,
+		.thumbnails ul {
+			grid-column: 2/4;
+		}
+
+		.twin,
+		.footer aside 
+		{
+			grid-column: 2 span;
+		}
+
+	}
+	
+}
+
+
+
+
+
